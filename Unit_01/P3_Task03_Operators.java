@@ -53,7 +53,7 @@ public class P3_Task03_Operators {
 		System.out.println((5>3) && (8<5)); //false
 		// || operator
 		System.out.println((5<3) || (8>5)); //true
-		System.out.println((5>3) || (8<5)); //true
+		System.out.println((5>3) || (82<5)); //true
 		System.out.println((5<3) || (8<5)); //false
 		// !operator
 		System.out.println(!(5==3)); //true
