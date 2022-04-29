@@ -16,6 +16,10 @@ public class P08_Task01_InheritanceInJava {
 
 }
 
+interface temp{
+	void fun();
+}
+
 class One {
 	int a;
 	One(int x){
@@ -86,14 +90,19 @@ class C extends A{
 	}
 }
 
-class D extends A{
+class D extends A implements temp{
 	int d;
 	D(int d1){
 		super(d1);
 		d=d1;
 	}
-	public void methodFour() {
+	void methodFour() {
 		System.out.println(d);
+	}
+	@Override
+//	public
+	void fun() {
+		
 	}
 }
 
