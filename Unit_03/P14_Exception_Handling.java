@@ -6,17 +6,18 @@ import java.util.Scanner;
 public class P14_Exception_Handling {
 
 	public static void main(String[] args) {
-		BasicException1();
+//		BasicException1();
 		BasicException2();
 		BasicException3();
 		BasicException4();
-		BasicException5(1);
+//		BasicException5(1);
 		BasicException6();
+		BasicException7();
 	}
-	static void BasicException1() {
-		int a=100,ans=0;
-		ans=a/0;
-	}
+//	static void BasicException1() {
+//		int a=100,ans=0;
+//		ans=a/0;
+//	}
 	static void BasicException2() {
 		int a=100,ans=0;
 		try {
@@ -44,16 +45,16 @@ public class P14_Exception_Handling {
 			System.out.println("Wrong Input");
 		}	
 	}
-	static void BasicException5(int a) {
-		try {
-			while(a>0) {
-				a++;BasicException5(a);
-			}
-		}catch(Exception e){
-			System.out.println("error");
-		}
-		
-	}
+//	static void BasicException5(int a) {
+//		try {
+//			while(a>0) {
+//				a++;BasicException5(a);
+//			}
+//		}catch(Exception e){
+//			System.out.println("error");
+//		}
+//		
+//	}
 	static void BasicException6() {
 		int arr[]=new int[3];
 		arr[0]=1;arr[1]=2;arr[2]=3;
@@ -63,5 +64,11 @@ public class P14_Exception_Handling {
 			System.out.println("Out of bounds");
 		}
 	}
-
+	static void BasicException7() {
+		try {
+			int a=(Integer) null;
+		}catch(NullPointerException e){
+			System.out.println("Null");
+		}
+	}
 }
