@@ -6,15 +6,17 @@ import java.util.Scanner;
 
 public class P14_Exception_Handling {
 
-	public static void main(String[] args) {
-//		BasicException1();
+	public static void main(String[] args){
+		BasicException1();
 		BasicException2();
 		BasicException3();
-//		BasicException4();
-//		BasicException5(1);
-//		BasicException6();
+		BasicException4();
+		BasicException5(1);
+		BasicException6();
+		checkedAndUncheckedException();
 		BasicException7();
 		useOfThrows_And_Finally();
+		checkName("roshan");
 	}
 	static void BasicException1() {
 		int a=100,ans=0;
@@ -97,5 +99,33 @@ public class P14_Exception_Handling {
 		for(int i=0;i<3;i++)
 			System.out.println("continue");
 
+	}
+	static void checkedAndUncheckedException() {
+		int x = 0;
+		int y = 10;
+		int z = y / x;
+
+		System.out.println(z);
+		try {
+			useOfThrow(19);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	} 
+	static void checkName(String s){
+		try {
+			if(s.charAt(0)>95) {
+				throw new IncorrectName();
+			}
+		}catch(IncorrectName e){
+			System.out.println(e.getMessage());
+		}
+	}
+
+}
+@SuppressWarnings("serial")
+class IncorrectName extends Exception{
+	public IncorrectName() {
+		super("First letter should be capital");
 	}
 }
