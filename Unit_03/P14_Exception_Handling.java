@@ -1,5 +1,6 @@
 package Unit_03;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -9,15 +10,16 @@ public class P14_Exception_Handling {
 //		BasicException1();
 		BasicException2();
 		BasicException3();
-		BasicException4();
+//		BasicException4();
 //		BasicException5(1);
-		BasicException6();
+//		BasicException6();
 		BasicException7();
+		useOfThrows_And_Finally();
 	}
-//	static void BasicException1() {
-//		int a=100,ans=0;
-//		ans=a/0;
-//	}
+	static void BasicException1() {
+		int a=100,ans=0;
+		ans=a/0;
+	}
 	static void BasicException2() {
 		int a=100,ans=0;
 		try {
@@ -45,16 +47,16 @@ public class P14_Exception_Handling {
 			System.out.println("Wrong Input");
 		}	
 	}
-//	static void BasicException5(int a) {
-//		try {
-//			while(a>0) {
-//				a++;BasicException5(a);
-//			}
-//		}catch(Exception e){
-//			System.out.println("error");
-//		}
-//		
-//	}
+	static void BasicException5(int a) {
+		try {
+			while(a>0) {
+				a++;BasicException5(a);
+			}
+		}catch(Exception e){
+			System.out.println("error");
+		}
+		
+	}
 	static void BasicException6() {
 		int arr[]=new int[3];
 		arr[0]=1;arr[1]=2;arr[2]=3;
@@ -70,5 +72,30 @@ public class P14_Exception_Handling {
 		}catch(NullPointerException e){
 			System.out.println("Null");
 		}
+	}
+	static void useOfThrow(int age) throws Exception, ArithmeticException, IOException {
+
+		if (age < 18) {
+			throw new Exception("Under 18");
+		} else {
+			System.out.println("You are allowed to enter");
+		}
+
+	}
+
+	static void useOfThrows_And_Finally() {
+
+		try {
+			useOfThrow(10);
+		} catch (ArithmeticException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		for(int i=0;i<3;i++)
+			System.out.println("continue");
+
 	}
 }
