@@ -86,7 +86,7 @@ public class P14_Exception_Handling {
 	}
 
 	static void useOfThrows_And_Finally() {
-
+		
 		try {
 			useOfThrow(10);
 		} catch (ArithmeticException e) {
